@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark</title>
+    <link rel="icon" href="images.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="Style/all.min.css">
+    <link rel="stylesheet" href="Style/bootstrap.min.css">
+    <link rel="stylesheet" href="Style/style.css">
+</head>
+
+<body>
+    <section class="position-relative">
+        <div class="container d-flex justify-content-center align-items-center flex-column ">
+
+            <h1 class="my-5 ">Bookmarker</h1>
+            <div class="book-mark row ">
+
+                <h2 class=" text-center my-4">
+                    <i class="fa-solid fa-bookmark"></i>
+                    Bookmark your favorite sites
+                    <i class="fa-solid fa-bookmark"></i>
+                </h2>
+
+                <div class="mb-4">
+                    <label for="siteName" class="form-label"><i class="fa-solid fa-book-bookmark pe-2"></i> Site
+                        Name</label>
+                    <input oninput="validationName()" type="text" class="form-control" id="siteName"
+                        aria-describedby="emailHelp" placeholder="Bookmark Name">
+                    <p id="msgName" class="alert alert-danger d-none">
+                        Please enter a valid name. It should only contain letters and spaces and at least 3 - 15.
+                    </p>
+                </div>
+                <div class="mb-3">
+                    <label for="siteUrl" class="form-label"><i class="fa-solid fa-link pe-2"></i> Site
+                        URL</label>
+                    <input oninput="validationUrl()" type="text" class="form-control" id="siteUrl"
+                        aria-describedby="emailHelp" placeholder="Website URL">
+                    <p id="msgUrl" class="alert alert-danger d-none">
+                        "The URL contains invalid characters. Please make sure it is a valid website address , and start
+                        with https or ftp or smtp ,and Contain [a-z or A-Z or 0-9 or#] "
+                    </p>
+                </div>
+
+                <button onclick=" addWebsite()" class="btn btn-submit text-center my-3" id="submitBtn">Submit</button>
+            </div>
+            <div class="row table-row">
+                <table class="table mt-4 text-center bg-light">
+                    <thead>
+                        <tr>
+                            <th class="text-capitalize">Index</th>
+                            <th class="text-capitalize">Website Name</th>
+                            <th class="text-capitalize">Visit</th>
+                            <th class="text-capitalize">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body" id="rowData">
+
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+
+
+    </section>
+    
+    <div id="lightBox"
+        class="box-info start-0 top-0 d-flex justify-content-center align-items-center w-100 h-100 position-absolute d-none">
+        <div class="box-invalid bg-light rounded-2 p-4">
+            <header class="mb-3 d-flex justify-content-between align-items-center">
+                <div class="spans d-flex">
+                    <span class="bg-danger"></span>
+                    <span class="bg-warning"></span>
+                    <span class="bg-success"></span>
+                </div>
+                <button onclick="closeBox()" class="close-btn btn border-0"><i
+                        class="fs-3 fw-bold fa-solid fa-xmark"></i></button>
+
+            </header>
+            <p>Site Name or Url is not valid, Please follow the rules below :</p>
+            <ol class="list-unstyled">
+                <li><i class="fa-regular fa-circle-right p-2"></i>Site name must contain at least 3 characters
+                </li>
+                <li><i class="fa-regular fa-circle-right p-2"></i>Site URL must be a valid one</li>
+            </ol>
+        </div>
+    </div>
+
+
+
+
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+body {
+    background-color: #F7ECDE;
+}
+
+::selection {
+    background-color: #fec260;
+    color: #352e28;
+}
+
+.container h1 {
+    font-family: "Pacifico", cursive;
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 60px;
+    color: #352e28;
+    position: relative;
+    z-index: 1;
+}
+
+.container h1::before {
+    content: "";
+    position: absolute;
+    width: 265px;
+    height: 20px;
+    bottom: 5px;
+    background-color: #fec260;
+    z-index: -1;
+    transition: all 0.5s;
+}
+
+.container h1:hover::before {
+    height: 35px;
+}
+
+.book-mark {
+    border-top: dotted black 2px;
+    border-bottom: dotted black 2px;
+    width: 100%;
+}
+
+.book-mark h2 {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 30px;
+    background-image: linear-gradient(to right, #3ca55c, #d99c39);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Righteous", sans-serif;
+}
+
+label {
+    font-family: "PT Sans Caption", sans-serif;
+    font-weight: 600;
+    color: #212529;
+}
+
+.form-control:focus {
+    border-color: #d99c39;
+    box-shadow: 0 0 0 0.25rem #fec26055;
+}
+
+.btn-submit {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #d1512d;
+    --bs-btn-border-color: #d1512d;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #bb4120;
+    --bs-btn-hover-border-color: #a03315;
+    width: 10rem;
+    margin: auto;
+}
+
+.table-row {
+    width: 100%;
+}
+
+.box-info {
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.box-info .box-invalid {
+    width: 490px;
+    z-index: 1000;
+    font-family: "PT Sans Caption", sans-serif;
+}
+
+.box-info .box-invalid header .spans span {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border-radius: 50%;
+}
+
+.box-info .box-invalid p {
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 27px;
+    color: #352e28;
+    margin-bottom: 20px;
+    font-family: "Bree Serif", serif;
+}
+
+.box-info .box-invalid ol {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    color: #212529;
+}
+
+.box-info .box-invalid ol li i {
+    color: #bb4120;
+    font-size: 18px;
+}
